@@ -61,7 +61,7 @@ n. 3 <4 ifTrue: ['the true block'] ifFalse: ['the false block']
 
 Para cada mensaje, identifique las clases de los objetos receptores. Para el caso de los mensajes que incluyen otros mensajes, determine en qué orden se efectúan las evaluaciones. Puede hacer uso de los mensajes `print` o `printNl` para imprimir los resultados por pantalla.
 
-⬜ **9.** Evalúe en GNU-Smalltalk las siguientes secuencias de expresiones y explique lo que sucede en cada caso:
+✅ **9.** Evalúe en GNU-Smalltalk las siguientes secuencias de expresiones y explique lo que sucede en cada caso:
 
 ```smalltalk
 | max a b |
@@ -83,7 +83,7 @@ facs size timesRepeat:[
 facs print
 ```
 
-⬜ **10.** Considere las siguientes clases definidas en GNU-Smalltalk. Sea `z` un objeto de la clase `B`, indique el valor que se obtiene de la ejecución de los siguientes mensajes:
+✅ **10.** Considere las siguientes clases definidas en GNU-Smalltalk. Sea `z` un objeto de la clase `B`, indique el valor que se obtiene de la ejecución de los siguientes mensajes:
 
 - a. `z met2`
 - b. `z met3`

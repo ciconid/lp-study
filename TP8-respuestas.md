@@ -353,6 +353,98 @@ No hay contradicción entre ambas ideas: “dinámico” indica **cuándo** se c
 
 ---
 
+## Pregunta 9
+> Evalúe las siguientes secuencias de expresiones y explique lo que sucede en cada caso.
+
+> *"Los mensajes unarios tienen mayor precedencia que los binarios, y estos mayor que los de palabra clave."*
+> — Slides - POO y Smalltalk (p. 17)
+
+### Secuencia 1
+
+```smalltalk
+| max a b |
+a := 5 squared.
+b := 4 factorial.
+a < b ifTrue: [max := b]
+      ifFalse: [max := a].
+max print
+```
+
+- `5 squared` → `25` (unario)
+- `4 factorial` → `24` (unario)
+- `25 < 24` → `false`
+- Se ejecuta el bloque `ifFalse:` → `max := 25`
+- `max print` imprime `25`
+
+**Resultado:** `25`
+
+### Secuencia 2
+
+```smalltalk
+| t i facs |
+facs := {3. 4. 5. 6}.
+i := 1.
+facs size timesRepeat:[
+    t := facs at: i.
+    facs at: i put: t factorial.
+    i := i + 1].
+facs print
+```
+
+> *"`<entero> timesRepeat: <bloque>` repite el bloque tantas veces como indique el entero receptor."*
+> — Slides - POO y Smalltalk (p. 21)
+
+- `facs` es un Array con los elementos `{3, 4, 5, 6}`.
+- `facs size` → `4`, por lo tanto el bloque se ejecuta 4 veces.
+- Cada iteración lee el elemento en la posición `i`, le aplica `factorial`, y reemplaza el elemento en esa posición:
+  - i=1: `3 factorial = 6` → `facs = {6, 4, 5, 6}`
+  - i=2: `4 factorial = 24` → `facs = {6, 24, 5, 6}`
+  - i=3: `5 factorial = 120` → `facs = {6, 24, 120, 6}`
+  - i=4: `6 factorial = 720` → `facs = {6, 24, 120, 720}`
+
+**Resultado:** `(6 24 120 720 )`
+
+---
+
+## Pregunta 10
+> Sea `z` un objeto de la clase `B`. Indique el valor de `z met2` y `z met3`.
+
+> *"La ligadura dinámica de código permite que un mensaje se resuelva de distintas maneras dependiendo del tipo del objeto que recibe el mensaje."*
+> — Slides - POO y Smalltalk (p. 10)
+
+### Construcción del objeto
+
+`B new` invoca `A class >> new` (heredado), que ejecuta `super new inicializar`. Como `z` es instancia de `B`, y `B` redefine `inicializar`, se ejecuta el `inicializar` de `B`:
+
+```
+i := 3
+j := 6
+```
+
+### a. `z met2`
+
+`met2` envía `self met1`. `self` referencia al objeto `z` (instancia de `B`), por lo que se resuelve con ligadura dinámica → se ejecuta `met1` de `B`:
+
+```
+i * j = 3 * 6 = 18
+```
+
+**Resultado: `18`**
+
+### b. `z met3`
+
+`met3` envía `super met1`. `super` fuerza la búsqueda del método en la **superclase** (`A`), saltando la redefinición de `B` → se ejecuta `met1` de `A`:
+
+```
+i + j = 3 + 6 = 9
+```
+
+> Importante: `super` solo cambia **dónde se busca el método**, no el objeto receptor. Las variables `i` y `j` siguen siendo las de `z` (3 y 6), no las que inicializa `A` (2 y 4).
+
+**Resultado: `9`**
+
+---
+
 ## Pregunta 13
 > Investigue sobre los distintos iteradores soportados por Smalltalk. ¿En qué clases están definidos? ¿Cómo se utilizan? Compárelos con los mecanismos de iteración provistos por Python y Java.
 
