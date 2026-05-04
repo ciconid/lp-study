@@ -419,3 +419,56 @@ La diferencia central es filosófica: en Smalltalk la iteración es simplemente 
 
 En Python y Java, la iteración está soportada por el lenguaje con sintaxis dedicada (`for`) sobre un protocolo/interfaz que el objeto debe satisfacer.
 
+---
+
+## Pregunta 14
+> Agregue al conjunto de métodos de la clase `BlockClosure` de Smalltalk una nueva estructura de control similar al `repeat until` de Pascal.
+
+En Smalltalk, las estructuras de control se modelan como **mensajes a objetos**, no como construcciones sintácticas especiales del lenguaje.
+
+> *"Al igual que con la selección, las estructuras de iteración se modelan mediante mensajes a objetos. Clase `BlockClosure`: `<bloque> whileTrue: <bloque>`, `<bloque> whileFalse: <bloque>`"*
+> — Slides - POO y Smalltalk (p. 21)
+
+Estos mensajes están definidos directamente en `BlockClosure`. Por el mismo mecanismo, se puede **extender** `BlockClosure` con un nuevo método `repeatUntil:`, sin necesidad de subclasificar:
+
+> *"Notar que estamos agregando comportamiento a una clase predefinida, sin tener que definir una subclase."*
+> — Slides - POO y Smalltalk (p. 23), en referencia al uso de `extend`.
+
+### Implementación
+
+```smalltalk
+BlockClosure extend [
+    repeatUntil: condBlock [
+        self value.
+        (condBlock value) ifFalse: [ self repeatUntil: condBlock ]
+    ]
+]
+```
+
+O bien de forma iterativa usando `whileFalse:`:
+
+```smalltalk
+BlockClosure extend [
+    repeatUntil: condBlock [
+        | continuar |
+        continuar := false.
+        [ continuar ] whileFalse: [
+            self value.
+            continuar := condBlock value
+        ]
+    ]
+]
+```
+
+### Verificación con el ejemplo del enunciado
+
+```smalltalk
+| p k |
+p := 0.
+k := 0.
+[k := k + 1. p := p + k] repeatUntil: [p > 8].
+p printNl.  "→ 10"
+```
+
+La semántica es: **ejecutar el bloque receptor al menos una vez**, y repetir hasta que el bloque argumento (`condBlock`) evalúe a `true`. Es el equivalente al `repeat...until` de Pascal, donde la condición se evalúa **después** de cada iteración.
+

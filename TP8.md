@@ -151,7 +151,7 @@ c:= B new. c:=a. c va. c vb. a va: 10. c va.
 
 ✅ **13.** Investigue sobre los distintos iteradores soportados por Smalltalk. ¿En qué clases están definidos? ¿Cómo se utilizan? Compárelos con los mecanismos de iteración provistos por Python y Java.
 
-⬜ **14.** Agregue al conjunto de métodos de la clase `BlockClosure` de Smalltalk una nueva estructura de control similar al `repeat until` de Pascal. A modo de ejemplo, si evaluamos la siguiente secuencia de expresiones, el valor de `p` al finalizar es el objeto `10`:
+✅ **14.** Agregue al conjunto de métodos de la clase `BlockClosure` de Smalltalk una nueva estructura de control similar al `repeat until` de Pascal. A modo de ejemplo, si evaluamos la siguiente secuencia de expresiones, el valor de `p` al finalizar es el objeto `10`:
 
 ```smalltalk
 | p k val |
