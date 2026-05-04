@@ -40,7 +40,7 @@ De la clasificación anterior se aprecia que todas las instancias de las clases 
 
 ✅ **7.** Retomando lo realizado en el ejercicio 1, analice si Smalltalk es un lenguaje fuertemente tipado.
 
-⬜ **8.** Evalúe en el intérprete de GNU-Smalltalk las siguientes expresiones:
+✅ **8.** Evalúe en el intérprete de GNU-Smalltalk las siguientes expresiones:
 
 ```smalltalk
 a. 3 >= 8 and: [ 2 <= 4 ]
