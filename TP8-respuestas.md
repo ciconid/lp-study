@@ -240,3 +240,24 @@ Algunos lenguajes (Ruby, Scala, Rust) ofrecen **mixins** o **traits**: unidades 
 
 La conclusión de la comunidad de diseño de lenguajes es que la herencia múltiple de clases con estado introduce una complejidad que raramente justifica sus beneficios. La tendencia moderna es separar la **jerarquía de tipos** (interfaces/traits) de la **jerarquía de implementación** (herencia simple de clases), obteniendo así la flexibilidad del polimorfismo múltiple sin la fragilidad del diamante.
 
+---
+
+## Pregunta 5
+> En algunos problemas, una clasificación ortogonal de clases resulta más natural (...). ¿Qué forma de herencia basada en clases se ajusta mejor? ¿Y cómo incorporar casos como el ornitorrinco?
+
+Cuando la clasificación es **ortogonal** (ejes independientes: `tipo` y `dieta`), la forma que mejor se ajusta es una combinación tipo:
+
+- jerarquía de especie (`Ave`, `Mamifero`, `Reptil`), y
+- jerarquía/rol de alimentación (`Herbivoro`, `Carnivoro`).
+
+Si se modela estrictamente con herencia de clases, esto lleva a **herencia múltiple** en las clases concretas (por ejemplo, `Leon` heredando de `Mamifero` y de `Carnivoro`), porque evita duplicar comportamiento y refleja la doble pertenencia natural de cada especie en la grilla.
+
+Sin embargo, para mantener consistencia del modelo, conviene usar una clase biológica principal y expresar el segundo eje como rol (interfaz/trait/mixin, según el lenguaje), evitando una explosión de subclases del tipo `MamiferoCarnivoro`, `MamiferoHerbivoro`, etc.
+
+Para casos como el **ornitorrinco**, lo más apropiado es **no** hacerlo heredar de `Mamifero` y `Reptil` completos, porque mezcla taxonomías y puede introducir ambigüedades semánticas. Es preferible:
+
+1. mantener `Ornitorrinco` como subclase de `Mamifero` (clasificación biológica principal), y
+2. agregar rasgos reptilianos puntuales mediante composición/traits (por ejemplo, `Oviparo`, `RasgosReptilianos`).
+
+En síntesis: para la tabla ortogonal, la opción más directa es herencia múltiple de ejes independientes; para excepciones híbridas como el ornitorrinco, resulta más robusto usar herencia simple para la jerarquía principal y combinar rasgos adicionales por roles.
+

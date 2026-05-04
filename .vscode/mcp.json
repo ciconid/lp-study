@@ -1,11 +1,11 @@
 {
-    "servers": {
-        "pdf-search": {
-            "type": "stdio",
-            "command": "python3",
-            "args": [
-                "${workspaceFolder}/tools/scripts/pdf_search_mcp.py"
-            ]
-        }
-    }
+	"servers": {
+		"pdf-search": {
+			"type": "stdio",
+			"command": "/home/cico/repos/lp-study/.venv/bin/python",
+			"args": [
+				"${workspaceFolder}/tools/scripts/pdf_search_mcp.py"
+			]
+		}
+	}
 }
