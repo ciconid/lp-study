@@ -19,7 +19,7 @@
 
 ✅ **4.** Analice bajo qué circunstancias la herencia múltiple puede presentar problemas. ¿Qué mecanismos pueden implementarse para evitarlos?
 
-⬜ **5.** En algunos problemas, una clasificación ortogonal de clases resulta más natural. Por ejemplo, suponga que se desea agrupar las distintas especies según su tipo (ave, mamífero, reptil, etc.) y sus hábitos alimenticios (herbívoros o carnívoros):
+✅ **5.** En algunos problemas, una clasificación ortogonal de clases resulta más natural. Por ejemplo, suponga que se desea agrupar las distintas especies según su tipo (ave, mamífero, reptil, etc.) y sus hábitos alimenticios (herbívoros o carnívoros):
 
 | | Ave | Mamífero | Reptil |
 |---|---|---|---|
@@ -30,7 +30,7 @@ Observando la tabla anterior, vemos que un león es un mamífero carnívoro, lue
 
 Por otra parte, también existen especies que aun siendo mamíferos (ej. el ornitorrinco) poseen características propias de los reptiles. ¿Cómo incorporaría esta categoría dentro de la clasificación anterior? ¿Qué forma de herencia basada en clases resulta más apropiada para este caso?
 
-⬜ **6.** Analice la siguiente jerarquía de clases, asumiendo herencia simple:
+✅ **6.** Analice la siguiente jerarquía de clases, asumiendo herencia simple:
 
 De la clasificación anterior se aprecia que todas las instancias de las clases `FiguraGeométrica`, `Circunferencia`, `Elipse`, `Rectángulo`, `Cuadrado` y `Triángulo` poseen en su protocolo las operaciones: `escalar`, `rotar` y `área`. Dentro de cada clase se indica las operaciones definidas. Por ejemplo, `escalar` es definida en `FiguraGeométrica` y redefinida en `Rectángulo` y `Triángulo`. Por otra parte, `área` está definida en `FiguraGeométrica` y redefinida en `Circunferencia`, `Elipse`, `Rectángulo` y `Cuadrado`. La pregunta es: ¿son polimórficas las operaciones `escalar`, `rotar` y `área`? Justifique sus afirmaciones.
 
