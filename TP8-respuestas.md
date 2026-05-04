@@ -245,19 +245,17 @@ La conclusión de la comunidad de diseño de lenguajes es que la herencia múlti
 ## Pregunta 5
 > En algunos problemas, una clasificación ortogonal de clases resulta más natural (...). ¿Qué forma de herencia basada en clases se ajusta mejor? ¿Y cómo incorporar casos como el ornitorrinco?
 
-Cuando la clasificación es **ortogonal** (ejes independientes: `tipo` y `dieta`), la forma que mejor se ajusta es una combinación tipo:
+En una clasificación **ortogonal** como la tabla (eje `tipo` y eje `dieta`), la forma más natural es la **herencia múltiple**: una clase concreta combina una clase de cada eje. Por ejemplo, `Leon` hereda de `Mamifero` y de `Carnivoro`; `Aguila` de `Ave` y `Carnivoro`.
 
-- jerarquía de especie (`Ave`, `Mamifero`, `Reptil`), y
-- jerarquía/rol de alimentación (`Herbivoro`, `Carnivoro`).
+Esto modela bien la doble pertenencia sin duplicar código en cada combinación.
 
-Si se modela estrictamente con herencia de clases, esto lleva a **herencia múltiple** en las clases concretas (por ejemplo, `Leon` heredando de `Mamifero` y de `Carnivoro`), porque evita duplicar comportamiento y refleja la doble pertenencia natural de cada especie en la grilla.
+Para el caso del **ornitorrinco** (mamífero con rasgos reptilianos), lo más apropiado es mantenerlo dentro de la jerarquía principal de mamíferos y agregar solo la parte necesaria de reptiles, es decir, usar una variante de **herencia selectiva** (o múltiple restringida):
 
-Sin embargo, para mantener consistencia del modelo, conviene usar una clase biológica principal y expresar el segundo eje como rol (interfaz/trait/mixin, según el lenguaje), evitando una explosión de subclases del tipo `MamiferoCarnivoro`, `MamiferoHerbivoro`, etc.
+- base principal: `Mamifero`
+- rasgos incorporados: solo los comportamientos/atributos reptilianos relevantes (por ejemplo, `oviparo`), no toda la interfaz de `Reptil`.
 
-Para casos como el **ornitorrinco**, lo más apropiado es **no** hacerlo heredar de `Mamifero` y `Reptil` completos, porque mezcla taxonomías y puede introducir ambigüedades semánticas. Es preferible:
+Síntesis:
 
-1. mantener `Ornitorrinco` como subclase de `Mamifero` (clasificación biológica principal), y
-2. agregar rasgos reptilianos puntuales mediante composición/traits (por ejemplo, `Oviparo`, `RasgosReptilianos`).
-
-En síntesis: para la tabla ortogonal, la opción más directa es herencia múltiple de ejes independientes; para excepciones híbridas como el ornitorrinco, resulta más robusto usar herencia simple para la jerarquía principal y combinar rasgos adicionales por roles.
+- para la grilla ortogonal: **herencia múltiple**;
+- para categorías híbridas excepcionales como el ornitorrinco: **herencia selectiva/restringida** sobre una clase base principal.
 
