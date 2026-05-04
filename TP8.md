@@ -117,7 +117,7 @@ A subclass: B [
 - a. `cantDigitos`: retorna la cantidad de dígitos presentes en la cadena receptora del mensaje.
 - b. `letras`: retorna el conjunto de letras presentes en la cadena receptora del mensaje.
 
-⬜ **12.** Dada la declaración de las siguientes clases:
+✅ **12.** Dada la declaración de las siguientes clases:
 
 ```smalltalk
 Object subclass: A [

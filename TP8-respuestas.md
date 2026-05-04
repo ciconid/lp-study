@@ -484,6 +484,57 @@ String extend [
 
 ---
 
+## Pregunta 12
+> Evalúe los mensajes, explique los conceptos involucrados, e identifique errores.
+
+### Clases
+
+```smalltalk
+Object subclass: A [       "va inicializa en 1"
+    | va |
+    ...
+]
+A subclass: B [            "va=1, vb=10"
+    | vb |
+    A class >> new [...]   "⚠ define new en A, no en B"
+    inicializar [ va:=1. vb:=10 ]
+    vb [^vb]
+]
+```
+
+**Nota sobre `A class >> new` dentro de `B`:** en GNU-Smalltalk esto define el método `new` en la clase `A`, no en `B`. `B` hereda el `new` de `A`, que llama `inicializar`; como `B` redefine `inicializar`, `B new` ejecuta el `inicializar` de `B` (ligadura dinámica).
+
+### Traza de ejecución
+
+```smalltalk
+| a b c |
+a := A new.   "a → instancia de A: va=1"
+a va.         "→ 1  ✓"
+
+b := B new.   "b → instancia de B: va=1, vb=10"
+b vb.         "→ 10 ✓"
+b va.         "→ 1  ✓  (va heredado de A)"
+
+c := B new.   "c → instancia de B: va=1, vb=10"
+c := a.       "c ahora apunta al MISMO objeto que a (instancia de A)"
+c va.         "→ 1  ✓"
+c vb.         "→ ERROR: c es instancia de A, no entiende 'vb'"
+a va: 10.     "va de a (y de c, mismo objeto) := 10. → 10"
+c va.         "→ 10 ✓  (c y a referencian el mismo objeto)"
+```
+
+### Error: `c vb`
+
+Después de `c := a`, `c` referencia una instancia de `A`, que no tiene el método `vb`. Smalltalk lanza un error de tipos en tiempo de ejecución ("does not understand: vb").
+
+### Conceptos involucrados
+
+- **Aliasing:** `c := a` no copia el objeto, hace que `c` y `a` apunten al mismo objeto. Por eso `a va: 10` afecta a `c va`.
+- **Ligadura dinámica:** `B new` usa la redefinición de `inicializar` en `B`, aunque `new` está definido en `A`.
+- **Chequeo de tipos en tiempo de ejecución:** Smalltalk no detecta `c vb` hasta que se ejecuta; en ese momento `c` es instancia de `A` y el error se produce.
+
+---
+
 ## Pregunta 13
 > Investigue sobre los distintos iteradores soportados por Smalltalk. ¿En qué clases están definidos? ¿Cómo se utilizan? Compárelos con los mecanismos de iteración provistos por Python y Java.
 
