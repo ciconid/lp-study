@@ -445,6 +445,45 @@ i + j = 3 + 6 = 9
 
 ---
 
+## Pregunta 11
+> Extienda la clase `String` con los métodos `cantDigitos` y `letras`, usando un iterador.
+
+> *"También podemos utilizar los métodos que provee la clase Collection: `do:`, `select:`, `reject:`, `collect:`"*
+> — Slides - POO y Smalltalk (p. 22)
+
+```smalltalk
+String extend [
+
+    cantDigitos [
+        | count |
+        count := 0.
+        self do: [:c | c isDigit ifTrue: [count := count + 1]].
+        ^count
+    ]
+
+    letras [
+        | conjunto |
+        conjunto := Set new.
+        self do: [:c | c isLetter ifTrue: [conjunto add: c]].
+        ^conjunto
+    ]
+]
+```
+
+### Verificación
+
+```smalltalk
+'abc123def456' cantDigitos printNl.   "→ 6"
+'hola mundo' letras printNl.          "→ Set ('h' 'o' 'l' 'a' 'm' 'u' 'n' 'd') (orden no garantizado)"
+```
+
+**Notas:**
+- `do:` itera sobre cada carácter (objeto `Character`) del String.
+- `isDigit` e `isLetter` son mensajes unarios de la clase `Character`.
+- Se usa `Set` para `letras` porque un conjunto no admite duplicados, lo que coincide con la semántica de "conjunto de letras".
+
+---
+
 ## Pregunta 13
 > Investigue sobre los distintos iteradores soportados por Smalltalk. ¿En qué clases están definidos? ¿Cómo se utilizan? Compárelos con los mecanismos de iteración provistos por Python y Java.
 

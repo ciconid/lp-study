@@ -112,7 +112,7 @@ A subclass: B [
 ]
 ```
 
-⬜ **11.** Extienda la definición de la clase `String` de Smalltalk con los siguientes métodos (para recorrer el string debe utilizar un iterador):
+✅ **11.** Extienda la definición de la clase `String` de Smalltalk con los siguientes métodos (para recorrer el string debe utilizar un iterador):
 
 - a. `cantDigitos`: retorna la cantidad de dígitos presentes en la cadena receptora del mensaje.
 - b. `letras`: retorna el conjunto de letras presentes en la cadena receptora del mensaje.
