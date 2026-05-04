@@ -17,7 +17,7 @@
 
 ✅ **3.** Analice la noción de efectos colaterales en el contexto de la programación orientada a objetos. ¿Es posible evitarlos? Justifique su respuesta.
 
-⬜ **4.** Analice bajo qué circunstancias la herencia múltiple puede presentar problemas. ¿Qué mecanismos pueden implementarse para evitarlos?
+✅ **4.** Analice bajo qué circunstancias la herencia múltiple puede presentar problemas. ¿Qué mecanismos pueden implementarse para evitarlos?
 
 ⬜ **5.** En algunos problemas, una clasificación ortogonal de clases resulta más natural. Por ejemplo, suponga que se desea agrupar las distintas especies según su tipo (ave, mamífero, reptil, etc.) y sus hábitos alimenticios (herbívoros o carnívoros):
 
