@@ -2,7 +2,7 @@
     "servers": {
         "pdf-search": {
             "type": "stdio",
-            "command": "/usr/bin/python3",
+            "command": "python3",
             "args": [
                 "${workspaceFolder}/tools/scripts/pdf_search_mcp.py"
             ]
