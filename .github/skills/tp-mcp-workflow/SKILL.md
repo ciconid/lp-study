@@ -13,8 +13,14 @@ Responder preguntas del TP de forma trazable y consistente.
    - `mcp_pdf-search_search_pdfs` para ubicar material.
    - `mcp_pdf-search_read_pdf` para validar contexto cuando haga falta.
 2. **Siempre citar fuentes** del material teórico consultado.
-   - Formato mínimo recomendado: `Archivo (p. N)`.
-   - Incluir al menos 1 cita por respuesta (idealmente 2 o más si corresponde).
+   - Las citas deben aparecer **inmediatamente después** de la afirmación que las respalda, no agrupadas al final.
+   - Usar siempre el formato blockquote de Markdown para diferenciarlas visualmente:
+     ```
+     > *"texto citado o síntesis de la fuente"*
+     > — Archivo (p. N)
+     ```
+   - Si la cita es propia (síntesis, no cita textual), igualmente usar blockquote con `— Archivo (p. N)` al pie.
+   - Incluir al menos 1 cita por afirmación relevante derivada del material.
 3. **Responder en** `TP8-respuestas.md` en la sección de la pregunta.
 4. **Marcar la pregunta como respondida** en `TP8.md` cambiando:
    - `⬜ **N.**` → `✅ **N.**`
@@ -22,7 +28,7 @@ Responder preguntas del TP de forma trazable y consistente.
 
 ## Checklist de ejecución
 - [ ] Busqué en PDFs con MCP.
-- [ ] Incluí citas explícitas en la respuesta.
+- [ ] Incluí citas explícitas **inline**, después de cada afirmación respaldada por el material.
 - [ ] Actualicé `TP8-respuestas.md`.
 - [ ] Marqué `✅` en `TP8.md`.
 - [ ] Verifiqué que no queden cambios incompletos.

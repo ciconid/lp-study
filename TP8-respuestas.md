@@ -304,3 +304,23 @@ Conclusión alternativa: si el criterio es “mismo mensaje para toda la familia
 
 **Fuentes:** 06-SistemaDeTipos (p. 3, p. 4), 08-Encapsulamiento-Abstracción (p. 2), Concepts of Programming Languages - Sebesta - E12 (p. 170).
 
+---
+
+## Pregunta 7
+> Retomando lo realizado en el ejercicio 1, analice si Smalltalk es un lenguaje fuertemente tipado.
+
+Sí: **Smalltalk se considera fuertemente tipado** en el sentido de la materia.
+
+La condición formal usada en la cátedra es que un lenguaje fuertemente tipado debe detectar todos los errores de tipos (propiedad de *type safety*). Esto está explicitado en el material de sistema de tipos.
+
+Además, en Smalltalk los chequeos no se hacen de manera estática en compilación, sino **en tiempo de ejecución**, verificando si el objeto receptor puede responder al mensaje enviado. Si no puede, se produce error de tipos.
+
+Por lo tanto, Smalltalk combina:
+
+- **tipado dinámico** (chequeo en runtime), y
+- **fuertemente tipado** (detección de errores de tipo).
+
+No hay contradicción entre ambas ideas: “dinámico” indica **cuándo** se chequea, y “fuertemente tipado” indica **qué tan completo** es el control de errores de tipo.
+
+**Fuentes:** Slides - POO y Smalltalk (p. 13, p. 24), 06-SistemaDeTipos (p. 2).
+
