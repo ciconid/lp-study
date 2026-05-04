@@ -1,0 +1,11 @@
+{
+    "servers": {
+        "pdf-search": {
+            "type": "stdio",
+            "command": "/usr/bin/python3",
+            "args": [
+                "${workspaceFolder}/pdf_search_mcp.py"
+            ]
+        }
+    }
+}
