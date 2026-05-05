@@ -180,7 +180,7 @@ Boolean subclass: False [
 - b. Relacione la implementación del `and:` en Smalltalk con los órdenes de evaluación vistos en la materia.
 - c. ¿El operador binario `&` se comporta de la misma manera? Muestre un ejemplo que sirva para justificar su respuesta.
 
-⬜ **17.** Analice el soporte para el concepto de polimorfismo provisto por Smalltalk. Como parte de su análisis, considere el método `and:` del ejercicio anterior.
+✅ **17.** Analice el soporte para el concepto de polimorfismo provisto por Smalltalk. Como parte de su análisis, considere el método `and:` del ejercicio anterior.
 
 ⬜ **18.** ¿Qué diferencias ve entre el sistema de tipos de Java y el Smalltalk? Realice un análisis comparativo entre estos lenguajes utilizando los criterios y/o características vistos en la materia.
 

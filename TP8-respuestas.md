@@ -780,3 +780,62 @@ La diferencia clave:
 | Argumento | `BlockClosure` (bloque) | `Boolean` (valor ya evaluado) |
 | Evaluación del argumento | Solo si el receptor es `true` (cortocircuito) | Siempre (estricta) |
 | Riesgo de error | Ninguno si receptor es `false` | Puede fallar aunque el resultado sea predecible |
+---
+
+## Pregunta 17
+> Analice el soporte para el concepto de polimorfismo provisto por Smalltalk. Como parte de su análisis, considere el método `and:` del ejercicio anterior.
+
+> *"La ligadura dinámica de código permite que un mensaje se resuelva de distintas maneras dependiendo del tipo del objeto que recibe el mensaje."*
+> — Slides - POO y Smalltalk (p. 10)
+
+### Polimorfismo en Smalltalk
+
+Smalltalk soporta **polimorfismo por inclusión** (universal), la forma más pura de polimorfismo en OO: un objeto puede recibir un mensaje y responderlo de distinta manera según su clase real, sin que el emisor conozca el tipo concreto del receptor.
+
+Esto se logra mediante **ligadura dinámica**: cuando se envía un mensaje, Smalltalk busca el método en la clase del objeto receptor en tiempo de ejecución. Si no lo encuentra ahí, sube por la jerarquía de herencia.
+
+Ejemplo clásico:
+
+```smalltalk
+Object subclass: Figura [
+    area [ ^self subclassResponsibility ]
+]
+Figura subclass: Circulo [
+    | radio |
+    area [ ^3.14159 * radio * radio ]
+]
+Figura subclass: Rectangulo [
+    | base altura |
+    area [ ^base * altura ]
+]
+
+| figuras |
+figuras := OrderedCollection new.
+figuras add: Circulo new.
+figuras add: Rectangulo new.
+figuras do: [:f | f area printNl].  "cada figura responde 'area' a su manera"
+```
+
+El emisor del mensaje `area` no sabe ni le importa si `f` es `Circulo` o `Rectangulo`: el mensaje se resuelve en tiempo de ejecución según el tipo real.
+
+### Polimorfismo en `and:`
+
+El método `and:` del ejercicio 16 es un ejemplo concreto de polimorfismo:
+
+```smalltalk
+Boolean subclass: True  [ and: aBlock [^aBlock value] ]
+Boolean subclass: False [ and: aBlock [^false] ]
+```
+
+Cuando se ejecuta `unaCondicion and: [otroBloque]`, Smalltalk resuelve qué implementación de `and:` usar según si `unaCondicion` es una instancia de `True` o `False`. El emisor no necesita saber cuál es: el polimorfismo garantiza el comportamiento correcto.
+
+Esto es exactamente polimorfismo por inclusión: `True` y `False` son subtipos de `Boolean`, y ambos responden al mensaje `and:` de forma diferente.
+
+### Diferencia con Java/C++
+
+En lenguajes como Java, el polimorfismo requiere declarar explícitamente tipos, interfaces o clases abstractas. En Smalltalk, **todo objeto puede recibir cualquier mensaje**: si lo entiende, lo ejecuta; si no, lanza un error en tiempo de ejecución. Esto hace que el polimorfismo sea más amplio pero menos verificable estáticamente.
+
+> *"Smalltalk dará un error de tipos si un objeto recibe un mensaje al cual no puede responder."*
+> — Slides - POO y Smalltalk (p. 24)
+
+Este enfoque se conoce como **duck typing** a nivel de despacho de mensajes: lo que importa no es el tipo del objeto sino si puede responder al mensaje.
