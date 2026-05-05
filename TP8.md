@@ -184,7 +184,7 @@ Boolean subclass: False [
 
 ✅ **18.** ¿Qué diferencias ve entre el sistema de tipos de Java y el Smalltalk? Realice un análisis comparativo entre estos lenguajes utilizando los criterios y/o características vistos en la materia.
 
-⬜ **19.** Compare la forma en que Smalltalk modela los tipos que son considerados primitivos en Java.
+✅ **19.** Compare la forma en que Smalltalk modela los tipos que son considerados primitivos en Java.
 
 ⬜ **20.** ¿Qué diferencias ve en la semántica de los operadores aritméticos en Smalltalk con respecto a otros lenguajes orientados a objetos como Java? ¿Qué ventajas y desventajas tienen asociadas esas diferencias?
 
