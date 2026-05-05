@@ -188,7 +188,7 @@ Boolean subclass: False [
 
 ✅ **20.** ¿Qué diferencias ve en la semántica de los operadores aritméticos en Smalltalk con respecto a otros lenguajes orientados a objetos como Java? ¿Qué ventajas y desventajas tienen asociadas esas diferencias?
 
-⬜ **21.** Utilice algún iterador para recorrer el objeto receptor en cada uno de los siguientes incisos:
+✅ **21.** Utilice algún iterador para recorrer el objeto receptor en cada uno de los siguientes incisos:
 
 - **a.** Extienda la clase `Array` con el método `calcular:`. Este método tiene una funcionalidad similar a la del iterador `collect:`, ya que retorna un arreglo cuyos elementos son el resultado de evaluar el bloque recibido como argumento, para cada uno de los elementos del arreglo receptor. Por ejemplo:
 
