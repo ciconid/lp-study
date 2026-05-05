@@ -162,7 +162,7 @@ k := 0.
 
 ✅ **15.** Extienda la clase `Array` de Smalltalk con el método `rotar:`, el cual rota los elementos del arreglo hacia la derecha, tantas veces como lo indique el argumento. Por ejemplo, sea `arreglo1` el siguiente arreglo: `[1 2 3 4 5 6]`, después de ejecutarse el mensaje `arreglo1 rotar: 3`, `arreglo1` queda como sigue: `[4 5 6 1 2 3]`.
 
-⬜ **16.** La implementación del método `and:` en Smalltalk es la siguiente:
+✅ **16.** La implementación del método `and:` en Smalltalk es la siguiente:
 
 ```smalltalk
 Boolean subclass: True [

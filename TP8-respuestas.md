@@ -723,3 +723,60 @@ arreglo1 printNl.   "→ (4 5 6 1 2 3 )"
 - `rotaciones = n mod size` maneja valores de `n` mayores al tamaño.
 - Los elementos `1...(size-rotaciones)` van a las posiciones `(rotaciones+1)...size`, y los últimos `rotaciones` elementos van a las posiciones `1...rotaciones`.
 - Se copia de vuelta al receptor para modificarlo in-place.
+
+---
+
+## Pregunta 16
+> Explique el método `and:` de Smalltalk, relaciónelo con los órdenes de evaluación, y compare con el operador `&`.
+
+### a. Cómo funciona `and:`
+
+La implementación usa **ligadura dinámica**: el comportamiento cambia según si el receptor es `true` o `false`.
+
+```smalltalk
+Boolean subclass: True [
+    and: aBlock [^aBlock value]   "evalúa el bloque y retorna su resultado"
+]
+Boolean subclass: False [
+    and: aBlock [^false]          "ignora el bloque, retorna false directamente"
+]
+```
+
+- Si el receptor es `true`: el resultado depende del argumento → se evalúa el bloque.
+- Si el receptor es `false`: el resultado ya se conoce (es `false`) → el bloque **nunca se evalúa**.
+
+Ejemplos:
+```smalltalk
+true  and: [3 > 2]   "→ true  (evalúa el bloque)"
+false and: [3 > 2]   "→ false (bloque no evaluado)"
+false and: [1/0]     "→ false (sin error, bloque no se toca)"
+```
+
+### b. Relación con los órdenes de evaluación
+
+> *"Evaluación corto-circuito (en expresiones booleanas): se retorna el valor de la expresión tan pronto como se pueda determinar el valor de verdad sin ambigüedad."*
+> — 03-Expresiones (p. 3)
+
+> *"Evaluación no estricta [...] los argumentos de una función o los operandos de la expresión no son evaluados a menos que sean necesarios para determinar el valor de la expresión."*
+> — 03-Expresiones (p. 3)
+
+`and:` implementa **evaluación corto-circuito** (una forma de evaluación no estricta): si el receptor es `false`, el segundo operando (el bloque) no se evalúa porque el resultado ya está determinado. Esto es análogo al operador `&&` de C/Java.
+
+En contraste con la **evaluación estricta (ansiosa)**, que siempre evalúa todos los operandos antes de aplicar el operador, `and:` evita trabajo innecesario y previene errores en tiempo de ejecución (como divisiones por cero dentro del bloque).
+
+### c. Diferencia con el operador binario `&`
+
+`&` es un mensaje **binario**, y en Smalltalk los argumentos de los mensajes binarios se evalúan **antes** de enviar el mensaje (evaluación estricta). Por lo tanto, `&` recibe un booleano ya calculado, no un bloque:
+
+```smalltalk
+false & (1/0 > 0)   "→ ERROR: se evalúa (1/0) antes de enviar '&'"
+false and: [1/0 > 0]  "→ false (sin error: bloque no evaluado)"
+```
+
+La diferencia clave:
+
+| | `and:` | `&` |
+|---|---|---|
+| Argumento | `BlockClosure` (bloque) | `Boolean` (valor ya evaluado) |
+| Evaluación del argumento | Solo si el receptor es `true` (cortocircuito) | Siempre (estricta) |
+| Riesgo de error | Ninguno si receptor es `false` | Puede fallar aunque el resultado sea predecible |
