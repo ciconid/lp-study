@@ -182,7 +182,7 @@ Boolean subclass: False [
 
 ✅ **17.** Analice el soporte para el concepto de polimorfismo provisto por Smalltalk. Como parte de su análisis, considere el método `and:` del ejercicio anterior.
 
-⬜ **18.** ¿Qué diferencias ve entre el sistema de tipos de Java y el Smalltalk? Realice un análisis comparativo entre estos lenguajes utilizando los criterios y/o características vistos en la materia.
+✅ **18.** ¿Qué diferencias ve entre el sistema de tipos de Java y el Smalltalk? Realice un análisis comparativo entre estos lenguajes utilizando los criterios y/o características vistos en la materia.
 
 ⬜ **19.** Compare la forma en que Smalltalk modela los tipos que son considerados primitivos en Java.
 

@@ -21,16 +21,30 @@ Responder preguntas del TP de forma trazable y consistente.
      ```
    - Si la cita es propia (síntesis, no cita textual), igualmente usar blockquote con `— Archivo (p. N)` al pie.
    - Incluir al menos 1 cita por afirmación relevante derivada del material.
-3. **Responder en** `TP8-respuestas.md` en la sección de la pregunta.
-4. **Marcar la pregunta como respondida** en `TP8.md` cambiando:
+3. **Crear o actualizar el archivo individual de respuesta** para cada pregunta:
+   - El archivo se ubica en el directorio del TP activo (ej. `TP8/pNN.md` para la pregunta N del TP8).
+   - El nombre sigue el patrón `pNN.md` donde `NN` es el número de pregunta con cero a la izquierda (p01, p02, ..., p10, p11, ...).
+   - Si el archivo ya existe, actualizar su contenido; si no existe, crearlo.
+   - Cada archivo debe comenzar con el encabezado:
+     ```
+     # Trabajo Práctico N° X — <Título del TP>
+     **Universidad Nacional del Sur — Lenguajes de Programación**
+
+     ---
+
+     ## Pregunta N
+     > <enunciado completo de la pregunta>
+     ```
+   - A continuación, la respuesta completa con citas inline.
+4. **Marcar la pregunta como respondida** en el archivo de enunciado del TP (ej. `TP8.md`) cambiando:
    - `⬜ **N.**` → `✅ **N.**`
-5. Confirmar al final qué archivos se actualizaron.
+5. Confirmar al final qué archivos se crearon o actualizaron.
 
 ## Checklist de ejecución
 - [ ] Busqué en PDFs con MCP.
 - [ ] Incluí citas explícitas **inline**, después de cada afirmación respaldada por el material.
-- [ ] Actualicé `TP8-respuestas.md`.
-- [ ] Marqué `✅` en `TP8.md`.
+- [ ] Creé o actualicé `TPX/pNN.md` con la respuesta completa.
+- [ ] Marqué `✅` en `TPX.md`.
 - [ ] Verifiqué que no queden cambios incompletos.
 
 ## Regla de calidad
