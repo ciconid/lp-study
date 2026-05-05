@@ -186,7 +186,7 @@ Boolean subclass: False [
 
 ✅ **19.** Compare la forma en que Smalltalk modela los tipos que son considerados primitivos en Java.
 
-⬜ **20.** ¿Qué diferencias ve en la semántica de los operadores aritméticos en Smalltalk con respecto a otros lenguajes orientados a objetos como Java? ¿Qué ventajas y desventajas tienen asociadas esas diferencias?
+✅ **20.** ¿Qué diferencias ve en la semántica de los operadores aritméticos en Smalltalk con respecto a otros lenguajes orientados a objetos como Java? ¿Qué ventajas y desventajas tienen asociadas esas diferencias?
 
 ⬜ **21.** Utilice algún iterador para recorrer el objeto receptor en cada uno de los siguientes incisos:
 
