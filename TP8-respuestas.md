@@ -680,4 +680,46 @@ p printNl.  "→ 10"
 ```
 
 La semántica es: **ejecutar el bloque receptor al menos una vez**, y repetir hasta que el bloque argumento (`condBlock`) evalúe a `true`. Es el equivalente al `repeat...until` de Pascal, donde la condición se evalúa **después** de cada iteración.
+---
 
+## Pregunta 15
+> Extienda la clase `Array` con el método `rotar:` que rota los elementos hacia la derecha N veces.
+> Ejemplo: `[1 2 3 4 5 6] rotar: 3` → `[4 5 6 1 2 3]`
+
+> *"`<collection> do: <bloque>` itera sobre cada elemento de la colección."*
+> — Slides - POO y Smalltalk (p. 22)
+
+**Análisis del ejemplo:** rotar 3 posiciones a la derecha significa que los primeros `n` elementos van al final.
+
+```smalltalk
+Array extend [
+    rotar: n [
+        | rotaciones nuevo |
+        rotaciones := n \\ self size.
+        nuevo := Array new: self size.
+        1 to: (self size - rotaciones) do: [:i |
+            nuevo at: (rotaciones + i) put: (self at: i)
+        ].
+        1 to: rotaciones do: [:i |
+            nuevo at: i put: (self at: (self size - rotaciones + i))
+        ].
+        1 to: self size do: [:i |
+            self at: i put: (nuevo at: i)
+        ].
+    ]
+]
+```
+
+### Verificación
+
+```smalltalk
+| arreglo1 |
+arreglo1 := #(1 2 3 4 5 6) asOrderedCollection asArray.
+arreglo1 rotar: 3.
+arreglo1 printNl.   "→ (4 5 6 1 2 3 )"
+```
+
+**Lógica:**
+- `rotaciones = n mod size` maneja valores de `n` mayores al tamaño.
+- Los elementos `1...(size-rotaciones)` van a las posiciones `(rotaciones+1)...size`, y los últimos `rotaciones` elementos van a las posiciones `1...rotaciones`.
+- Se copia de vuelta al receptor para modificarlo in-place.
