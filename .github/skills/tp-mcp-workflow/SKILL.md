@@ -9,9 +9,11 @@ description: Flujo obligatorio para responder preguntas del TP usando MCP con ci
 Responder preguntas del TP de forma trazable y consistente.
 
 ## Instrucciones obligatorias
-1. **Antes de responder cualquier pregunta**, buscar información relevante usando MCP de PDFs:
+1. **Antes de responder cualquier pregunta**, buscar información relevante usando MCP de PDFs y una breve búsqueda online (o en la base de conocimiento del modelo):
+   - Realizar las búsquedas tanto en español como en inglés, ya que la bibliografía puede estar en ambos idiomas. No es obligatorio traducir citas del inglés al español; pueden citarse en el idioma original.
    - `mcp_pdf-search_search_pdfs` para ubicar material.
    - `mcp_pdf-search_read_pdf` para validar contexto cuando haga falta.
+   - Realizar una breve búsqueda online (o en la base de conocimiento del modelo) sobre el tema de la pregunta. Si se encuentra información adicional relevante que no esté en la bibliografía, agregarla al final de la respuesta bajo el subtítulo "Información adicional".
 2. **Siempre citar fuentes** del material teórico consultado.
    - Las citas deben aparecer **inmediatamente después** de la afirmación que las respalda, no agrupadas al final.
    - Usar siempre el formato blockquote de Markdown para diferenciarlas visualmente:
@@ -48,4 +50,4 @@ Responder preguntas del TP de forma trazable y consistente.
 - [ ] Verifiqué que no queden cambios incompletos.
 
 ## Regla de calidad
-Si no hay evidencia suficiente en fuentes, **no inventar**: ampliar búsqueda MCP y recién después responder. Se pueden usar fuentes por fuera de la documentacion de este proyecto, pero es obligatorio citarlas.
+Si no hay evidencia suficiente en fuentes, **no inventar**: ampliar búsqueda MCP y recién después responder. Se pueden usar fuentes por fuera de la documentacion de este proyecto, pero es obligatorio citarlas. Las fuentes pueden ser externas, pero deben ser confiables y relevantes al tema. En caso de usar fuentes externas, se debe citar claramente con el formato indicado, incluyendo el nombre del autor o la organización, el título del documento o página web, y la fecha de consulta si es relevante.
