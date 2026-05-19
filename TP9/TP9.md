@@ -72,8 +72,8 @@ Nota: Puede encontrar un IDE online para SML en [sosml.org/editor](https://sosml
     a. `fun suma i j : int = i+j; (suma 3)`
     b. `fun menor a b : real = if a < b then a else b; (menor 2.0)`
     c. `fun f1 x y z = if (x = y) then x*z else z-y; (f1 2)`
-24. Compare la dureza del sistema de tipos respecto a las expresiones mixtas de Haskell con la de Pascal y la de Python.
-25. Para cada una de las siguientes funciones, indique su expresión de tipo, si son polimórficas y si son formas funcionales. Luego, impleméntelas en Haskell.
+✅ **24.** Compare la dureza del sistema de tipos respecto a las expresiones mixtas de Haskell con la de Pascal y la de Python.
+✅ **25.** Para cada una de las siguientes funciones, indique su expresión de tipo, si son polimórficas y si son formas funcionales. Luego, impleméntelas en Haskell.
     a. five, dado cualquier valor, devuelve 5.
     b. apply, toma una función y un valor, y devuelve el resultado de aplicar la función al valor.
     c. id, la función identidad.
@@ -81,27 +81,27 @@ Nota: Puede encontrar un IDE online para SML en [sosml.org/editor](https://sosml
     e. swap, que toma un par y devuelve el par con sus componentes invertidas.
     f. xor, el operador de disyunción exclusiva.
     g. max3, toma tres números enteros y devuelve el máximo entre ellos.
-26. Sin usar funciones de alto orden, defina en Haskell las siguientes funciones y en cada caso indique su tipo, si son polimórficas y si son formas funcionales:
+✅ **26.** Sin usar funciones de alto orden, defina en Haskell las siguientes funciones y en cada caso indique su tipo, si son polimórficas y si son formas funcionales:
     a. suma, suma todos los elementos de una lista de números.
     b. cuadrados, calcula la lista de los cuadrados de los elementos de una lista de números dada.
     c. longitudes, dada una lista de listas, devuelve la lista de sus respectivas longitudes.
     d. ordenados, dada una lista de pares de números, devuelve la lista con aquellos pares en los que la primera componente es menor que el triple de la segunda.
     e. pares, dada una lista de enteros, devuelve una lista con los elementos pares.
     f. masDe, dada una lista de listas y un número, devuelve la lista con aquellas listas cuya longitud es mayor al número dado.
-27. Usando la función de alto orden map, defina las funciones cuadrados y longitudes del ejercicio anterior. En cada caso indique su tipo, si son polimórficas y si son formas funcionales.
-28. Compare los mecanismos para definir nuevas funciones como aplicaciones parciales de Python y SML. Utilice al menos dos criterios de los estudiados para realizar la comparación.
-29. Defina en Haskell de manera curried la forma funcional filter, la cual aplica un predicado a los elementos de una lista y retorna la lista formada por los elementos que satisfacen el predicado. Por ejemplo:
+✅ **27.** Usando la función de alto orden map, defina las funciones cuadrados y longitudes del ejercicio anterior. En cada caso indique su tipo, si son polimórficas y si son formas funcionales.
+✅ **28.** Compare los mecanismos para definir nuevas funciones como aplicaciones parciales de Python y SML. Utilice al menos dos criterios de los estudiados para realizar la comparación.
+✅ **29.** Defina en Haskell de manera curried la forma funcional filter, la cual aplica un predicado a los elementos de una lista y retorna la lista formada por los elementos que satisfacen el predicado. Por ejemplo:
     ```haskell
     filter par [1,3,6,10,15,20] -- [6,10,20]
     ```
-30. Aplicando parcialmente la función de alto orden filter, defina las funciones pares y ordenados del ejercicio 26. Indique su tipo, si son polimórficas y si son formas funcionales.
-31. Considere las siguientes expresiones de tipos de funciones en SML. Determine si las funciones son: (1) función curried; (2) forma funcional; (3) función polimórfica.
+✅ **30.** Aplicando parcialmente la función de alto orden filter, defina las funciones pares y ordenados del ejercicio 26. Indique su tipo, si son polimórficas y si son formas funcionales.
+✅ **31.** Considere las siguientes expresiones de tipos de funciones en SML. Determine si las funciones son: (1) función curried; (2) forma funcional; (3) función polimórfica.
     a. `f1: ‘a list ->‘b list ->int list`
     b. `f2: (int * int * bool) ->int`
     c. `f3: ‘a list * (‘a * ‘a ->‘a list) * ‘b list * (‘b * ‘b ->‘b list) ->int`
     d. `f4: int list ->(int ->int) ->int`
-32. Explique de qué forma difiere el proceso de inferencia de tipos en Haskell en comparación con SML. Indique las principales razones detrás de esas diferencias. Ilustre con ejemplos a partir de las funciones desarrolladas en los ejercicios 25 y 26.
-33. Una definición del tipo árbol binario en SML puede ser la siguiente:
+✅ **32.** Explique de qué forma difiere el proceso de inferencia de tipos en Haskell en comparación con SML. Indique las principales razones detrás de esas diferencias. Ilustre con ejemplos a partir de las funciones desarrolladas en los ejercicios 25 y 26.
+✅ **33.** Una definición del tipo árbol binario en SML puede ser la siguiente:
     ```sml
     datatype ‘a arbolb = hoja of ‘a | nodo of ‘a arbolb * ‘a * ‘a arbolb;
     ```
@@ -110,11 +110,11 @@ Nota: Puede encontrar un IDE online para SML en [sosml.org/editor](https://sosml
     datatype (‘a, ‘b) arbolb = hoja of ‘b | nodo of (((‘a, ‘b) arbolb) * ‘a * ((‘a, ‘b) arbolb));
     ```
     Escriba la expresión de tipos para una función que, dado un árbol, genere una lista con todos los elementos almacenados en las hojas del árbol. ¿Sería posible generar una lista con todos los elementos y en las hojas y en los nodos internos de este árbol?
-34. Dada la siguiente secuencia de declaraciones en SML:
+✅ **34.** Dada la siguiente secuencia de declaraciones en SML:
     ```sml
     fun por2 x = x*2
     val funcion1 = map por2;
     fun funcion2 lista = map por2 lista;
     ```
     ¿Cuáles son las diferencias y similitudes entre funcion1 y funcion2?
-35. ¿En qué maneras SML se aleja de los lineamientos del paradigma funcional? Considerando que Haskell es un lenguaje funcional puro, ¿cómo hace para mantenerse dentro del paradigma en relación a esas características?
+✅ **35.** ¿En qué maneras SML se aleja de los lineamientos del paradigma funcional? Considerando que Haskell es un lenguaje funcional puro, ¿cómo hace para mantenerse dentro del paradigma en relación a esas características?
