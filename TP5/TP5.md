@@ -19,9 +19,9 @@ Lectura: Scott Cap. 7, Sebesta Cap. 6
 - b. Conversión implícita vs. Conversión explícita.
 - c. Alto grado de dureza vs Bajo grado de dureza.
 
-⬜ **6.** Describa las principales decisiones de diseño que un lenguaje puede tomar al especificar los atributos de las cadenas de caracteres, arreglos y arreglos asociativos. ¿Cómo pueden impactar estas decisiones en el chequeo de tipos del lenguaje?
+✅ **6.** Describa las principales decisiones de diseño que un lenguaje puede tomar al especificar los atributos de las cadenas de caracteres, arreglos y arreglos asociativos. ¿Cómo pueden impactar estas decisiones en el chequeo de tipos del lenguaje?
 
-⬜ **7.** Explique en qué consisten los tipos ordinal, enumerado y subrango. ¿De qué manera las decisiones de diseño asociadas a estos tipos pueden afectar a los chequeos de tipos en un lenguaje?
+✅ **7.** Explique en qué consisten los tipos ordinal, enumerado y subrango. ¿De qué manera las decisiones de diseño asociadas a estos tipos pueden afectar a los chequeos de tipos en un lenguaje?
 
 ⬜ **8.** ¿Qué chequeos de tipos puede realizar un lenguaje en torno al tipo unión? ¿Qué sucede en caso de unión discriminada?
 
