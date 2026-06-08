@@ -6,15 +6,15 @@ Lectura: Scott Cap. 7, Sebesta Cap. 6
 
 ## Conceptos
 
-⬜ **1.** ¿A qué nos referimos cuando hablamos de tipo de dato? ¿Qué es un sistema de tipos? ¿Cuáles son los principales criterios de evaluación de un lenguaje de programación que se ven afectados por el sistema de tipos? ¿Por qué?
+✅ **1.** ¿A qué nos referimos cuando hablamos de tipo de dato? ¿Qué es un sistema de tipos? ¿Cuáles son los principales criterios de evaluación de un lenguaje de programación que se ven afectados por el sistema de tipos? ¿Por qué?
 
-⬜ **2.** Defina qué significa que un lenguaje sea fuertemente tipado. ¿Qué desventajas tiene un lenguaje que no es fuertemente tipado? Ejemplifique.
+✅ **2.** Defina qué significa que un lenguaje sea fuertemente tipado. ¿Qué desventajas tiene un lenguaje que no es fuertemente tipado? Ejemplifique.
 
-⬜ **3.** ¿Cuál es la diferencia entre un error del lenguaje y un error de aplicación? ¿Qué relación tienen estos conceptos con la noción de lenguaje fuertemente tipado?
+✅ **3.** ¿Cuál es la diferencia entre un error del lenguaje y un error de aplicación? ¿Qué relación tienen estos conceptos con la noción de lenguaje fuertemente tipado?
 
-⬜ **4.** Defina la noción del grado de dureza de una característica del sistema de tipos. Seleccione dos características diferentes del sistema de tipos y, para cada una de ellas, indique restricciones que influyen en su grado de dureza.
+✅ **4.** Defina la noción del grado de dureza de una característica del sistema de tipos. Seleccione dos características diferentes del sistema de tipos y, para cada una de ellas, indique restricciones que influyen en su grado de dureza.
 
-⬜ **5.** Analice las ventajas y desventajas de:
+✅ **5.** Analice las ventajas y desventajas de:
 - a. Tipado estático vs. Tipado dinámico.
 - b. Conversión implícita vs. Conversión explícita.
 - c. Alto grado de dureza vs Bajo grado de dureza.
