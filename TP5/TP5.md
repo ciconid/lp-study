@@ -23,19 +23,19 @@ Lectura: Scott Cap. 7, Sebesta Cap. 6
 
 ✅ **7.** Explique en qué consisten los tipos ordinal, enumerado y subrango. ¿De qué manera las decisiones de diseño asociadas a estos tipos pueden afectar a los chequeos de tipos en un lenguaje?
 
-⬜ **8.** ¿Qué chequeos de tipos puede realizar un lenguaje en torno al tipo unión? ¿Qué sucede en caso de unión discriminada?
+✅ **8.** ¿Qué chequeos de tipos puede realizar un lenguaje en torno al tipo unión? ¿Qué sucede en caso de unión discriminada?
 
-⬜ **9.** Explique a qué se denomina coerción. ¿Cuáles son las desventajas de tener coerciones respecto al chequeo de tipos? ¿Cómo influyen en el grado de dureza del sistema de tipos?
+✅ **9.** Explique a qué se denomina coerción. ¿Cuáles son las desventajas de tener coerciones respecto al chequeo de tipos? ¿Cómo influyen en el grado de dureza del sistema de tipos?
 
-⬜ **10.** Indique claramente qué efectos en la determinación de tipos puede tener un lenguaje de programación que cuenta simultáneamente con coerción, sobrecarga y expresiones mixtas. En caso de generar problemas, ¿qué puede hacer el lenguaje para evitarlos?
+✅ **10.** Indique claramente qué efectos en la determinación de tipos puede tener un lenguaje de programación que cuenta simultáneamente con coerción, sobrecarga y expresiones mixtas. En caso de generar problemas, ¿qué puede hacer el lenguaje para evitarlos?
 
-⬜ **11.** Indique en qué aspectos el alcance dinámico afecta al sistema de tipos.
+✅ **11.** Indique en qué aspectos el alcance dinámico afecta al sistema de tipos.
 
-⬜ **12.** Muestre gráficamente las distintas formas de polimorfismo y explique cada una de ellas. ¿A qué criterios de evaluación afecta que el lenguaje ofrezca alguna forma de polimorfismo?
+✅ **12.** Muestre gráficamente las distintas formas de polimorfismo y explique cada una de ellas. ¿A qué criterios de evaluación afecta que el lenguaje ofrezca alguna forma de polimorfismo?
 
-⬜ **13.** ¿Qué ventaja ofrece incorporar polimorfismo paramétrico en un lenguaje con tipado estático (como Java) frente a uno que no lo incorpore? Justifique su respuesta.
+✅ **13.** ¿Qué ventaja ofrece incorporar polimorfismo paramétrico en un lenguaje con tipado estático (como Java) frente a uno que no lo incorpore? Justifique su respuesta.
 
-⬜ **14.** Los siguientes ítems muestran conjuntos de características relacionadas a los lenguajes de programación. Para cada uno, indique si es posible y/o conveniente incorporar las características mencionadas, de manera conjunta, en un lenguaje de programación real. Justifique adecuadamente.
+✅ **14.** Los siguientes ítems muestran conjuntos de características relacionadas a los lenguajes de programación. Para cada uno, indique si es posible y/o conveniente incorporar las características mencionadas, de manera conjunta, en un lenguaje de programación real. Justifique adecuadamente.
 - a. Tipado dinámico, expresiones mixtas, coerciones, sobrecarga de métodos.
 - b. Tipado estático, alcance estático, polimorfismo por inclusión, polimorfismo paramétrico.
 - c. Tipado estático, alcance dinámico, polimorfismo por inclusión, sobrecarga de operadores.
